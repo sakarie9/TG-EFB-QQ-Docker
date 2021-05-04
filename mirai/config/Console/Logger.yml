@@ -1,0 +1,7 @@
+# 日志输出等级 可选值: ALL, VERBOSE, DEBUG, INFO, WARNING, ERROR, NONE
+defaultPriority: INFO
+# 特定日志记录器输出等级
+loggers: 
+  example.logger: NONE
+  console.debug: NONE
+  Bot: ALL

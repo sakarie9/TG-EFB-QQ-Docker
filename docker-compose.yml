@@ -1,0 +1,33 @@
+version: "3.9"
+services:
+
+    efb:
+        container_name: efb
+        image: xzsk2/efb-qq-mirai-docker:latest
+        restart: unless-stopped
+        volumes:
+            - ./efb:/app/config
+        networks:
+            efbm:
+                aliases:
+                    - efb
+        depends_on:
+            - mirai
+    
+    mirai:
+        container_name: mirai
+        image: xzsk2/mirai-docker:latest
+        restart: unless-stopped
+        volumes:
+            - ./mirai/config:/app/config
+            # 如果需要device.json加上这条，把device.json放入"./mirai/bots/qq号/"中
+            # - ./mirai/bots:/app/bots
+        networks:
+            efbm:
+                aliases:
+                    - mirai
+        ports:
+            - "8080:8080"
+
+networks:
+    efbm:

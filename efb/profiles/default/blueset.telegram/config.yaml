@@ -1,0 +1,66 @@
+# ======================================
+# EFB Telegram Master Configuration file
+# ======================================
+#
+# This file configures how EFB Telegram Master Channel (ETM) works, and
+# Who it belongs to.
+#
+# Required items
+# --------------
+#
+# [Bot Token]
+# The bot token obtained from @BotFather, in the format of numbers-colon-
+# alphanumerals.
+
+token: xxx:xxx
+
+# [List of Admin User IDs]
+# ETM will only process messages and commands from users
+# listed below.  This ID can be obtained from various ways 
+# on Telegram.
+
+admins:
+- xxxxxxxx
+
+# Optional items
+# --------------
+#
+# [Experimental Flags]
+# This section can be used to toggle experimental functionality.
+# These features may be changed or removed at any time.
+# Refer to the project documentation for details.
+#
+# https://etm.1a23.studio
+
+flags: {}
+
+# [Network configurations]
+# Timeout tweaks, Proxy, etc.
+# Refer to the project documentation for details.
+#
+# https://etm.1a23.studio
+
+# request_kwargs:
+#     # HTTP Proxy
+#     proxy_url: http://127.0.0.1:80/
+#     # username: admin
+#     # password: password
+#
+#     # SOCKS5 proxy (Additional installations required)
+#     # proxy_url: socks5://127.0.0.1:1080/
+#     # urllib3_proxy_kwargs:
+#     #     username: admin
+#     #     password: password
+# HTTP Proxy
+
+# [RPC interface]
+# Enable RPC interface of ETM where you can use scripts to manage data stored
+# in the ETM message database or make queries.
+# Refer to the project documentation for details.
+#
+# https://etm.1a23.studio
+
+# rpc:
+#     server: 127.0.0.1
+#     port: 8000
+

@@ -1,0 +1,24 @@
+# ===================================
+# EH Forwarder Bot Configuration File
+# ===================================
+# 
+# This file determines what modules, including master channel, slave channels,
+# and middlewares, are enabled in this profile.
+# 
+# 
+# Master Channel
+# --------------
+# Exactly one instance of a master channel is required for a profile.
+# Fill in the module ID and instance ID (if needed) below.
+
+master_channel: blueset.telegram
+
+# Slave Channels
+# --------------
+# 
+# At least one slave channel is required for a profile.
+# Fill in the module ID and instance ID (if needed) of each slave channel
+# to be enabled below.
+
+slave_channels:
+- milkice.qq

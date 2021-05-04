@@ -1,0 +1,2 @@
+# 指令前缀, 默认 "/"
+commandPrefix: '/'

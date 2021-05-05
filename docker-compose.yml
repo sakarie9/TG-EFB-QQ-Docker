@@ -20,8 +20,7 @@ services:
         restart: unless-stopped
         volumes:
             - ./mirai/config:/app/config
-            # 如果需要device.json加上这条，把device.json放入"./mirai/bots/qq号/"中
-            # - ./mirai/bots:/app/bots
+            - ./mirai/bots:/app/bots
         networks:
             efbm:
                 aliases:

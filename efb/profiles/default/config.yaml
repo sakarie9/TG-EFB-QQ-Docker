@@ -22,3 +22,5 @@ master_channel: blueset.telegram
 
 slave_channels:
 - milkice.qq
+middlewares:
+- xzsk2.filter

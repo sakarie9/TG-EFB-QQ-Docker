@@ -3,7 +3,7 @@ services:
 
     efb:
         container_name: efb
-        image: xzsk2/efb-qq-mirai-docker:latest
+        image: xzsk2/efb-docker:latest
         restart: unless-stopped
         volumes:
             - ./efb:/app/config

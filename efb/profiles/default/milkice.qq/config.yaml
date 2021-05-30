@@ -1,6 +1,6 @@
 Client: mirai
 mirai:
   qq: xxxxxxxx           # 这里换成登录的 QQ 号
-  host: "mirai"       # Mirai HTTP API 监听地址，一般是 127.0.0.1
+  host: "127.0.0.1"       # Mirai HTTP API 监听地址，一般是 127.0.0.1
   port: 8080              # Mirai HTTP API 监听端口，一般是 8080
   authKey: "xxxxxxxx" # 这里填入在配置 Mirai API HTTP 时生成的 authKey

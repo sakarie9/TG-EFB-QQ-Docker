@@ -7,24 +7,19 @@ services:
         restart: unless-stopped
         volumes:
             - ./efb:/app/config
-        networks:
-            efbm:
-                aliases:
-                    - efb
-        depends_on:
-            - mirai
-    
-    mirai:
-        container_name: mirai
-        image: xzsk2/mirai-docker:latest
+        network_mode: "host"
+        command:
+            - /bin/sh
+            - -c
+            - |
+                echo "sleep for 20sec"
+                sleep 20
+                ehforwarderbot
+
+    gocq:
+        container_name: gocq
+        image: gocqhttp:latest
         restart: unless-stopped
         volumes:
-            - ./mirai/config:/app/config
-            - ./mirai/bots:/app/bots
-        networks:
-            efbm:
-                aliases:
-                    - mirai
-
-networks:
-    efbm: 
+            - ./gocq:/data
+        network_mode: "host"

@@ -1,6 +1,7 @@
-Client: mirai
-mirai:
-  qq: xxxxxxxx           # 这里换成登录的 QQ 号
-  host: "mirai"       # Mirai HTTP API 监听地址，一般是 127.0.0.1
-  port: 8080              # Mirai HTTP API 监听端口，一般是 8080
-  authKey: "xxxxxxxx" # 这里填入在配置 Mirai API HTTP 时生成的 authKey
+Client: GoCQHttp                      # 指定要使用的 QQ 客户端（此处为 GoCQHttp）
+GoCQHttp:
+    type: HTTP                        # 指定 efb-qq-plugin-go-cqhttp 与 GoCQHttp 通信的方式 现阶段仅支持 HTTP
+    access_token:
+    api_root: http://127.0.0.1:5700/  # GoCQHttp API接口地址/端口
+    host: 127.0.0.1                   # efb-qq-slave 所监听的地址用于接收消息
+    port: 8000                        # 同上

@@ -34,7 +34,7 @@ cd TG-EFB-QQ-Docker
 
 1. 修改 `blueset.telegram/config.yaml` 内的 `token` 及 `admins`，如不能访问Telegram则需要在此配置代理
 
-2. 生成配置文件 `gocq/config.yml` ，选择1HTTP模式
+2. 生成配置文件 `gocq/config.yml` ，选择 `1：HTTP通信`
    
     ```bash
     docker run --rm -it --name="gocq" -v $PWD/gocq:/data xzsk2/gocqhttp-docker:latest

@@ -34,51 +34,15 @@ cd TG-EFB-QQ-Docker
 
 1. 修改 `blueset.telegram/config.yaml` 内的 `token` 及 `admins`，如不能访问Telegram则需要在此配置代理
 
-2. 生成配置文件 `gocq/config.yml` ，选择 `1：HTTP通信`
-   
-    ```bash
-    docker run --rm -it --name="gocq" -v $PWD/gocq:/data xzsk2/gocqhttp-docker:latest
-    ```
-
-3. 编辑 `gocq/config.yml` 配置文件，注意修改如下部分
+2. 编辑 `gocq/config.yml` 配置文件
 
     ```bash
     account:         # 账号相关
       uin: 000000000 # QQ 账号
       password: ''   # QQ 密码，为空时使用扫码登录
-
-    message:
-      # 上报数据类型
-      # efb-qq-plugin-go-cqhttp 仅支持 array 类型
-      post-format: array
-      # 为Reply附加更多信息
-      extra-reply-data: true
-
-
-    # 默认中间件锚点
-    default-middlewares: &default
-      # 访问密钥，强烈推荐在公网的服务器设置
-      access-token: ''
-
-    servers:
-      # HTTP 通信设置
-      - http:
-          # 服务端监听地址
-          host: 127.0.0.1
-          # 服务端监听端口
-          port: 5700
-          # 反向 HTTP 超时时间, 单位秒
-          # 最小值为 5，小于 5 将会忽略本项设置
-          timeout: 5
-          middlewares:
-            <<: *default # 引用默认中间件
-          # 反向 HTTP POST 地址列表
-          post:
-            - url: 'http://127.0.0.1:8000' # 地址
-              secret: ''                   # 密钥保持为空
     ```
 
-4. （可选）修改登陆协议，运行如下命令，待提示生成 `device.json` 后 `ctrl+c` 退出，编辑 `gocq/device.json`
+3. （可选）修改登陆协议，运行如下命令，待提示生成 `device.json` 后 `ctrl+c` 退出，编辑 `gocq/device.json`，参考 [设备信息](https://docs.go-cqhttp.org/guide/config.html#%E8%AE%BE%E5%A4%87%E4%BF%A1%E6%81%AF)
 
     ```bash
     docker run --rm -it --name="gocq" -v $PWD/gocq:/data xzsk2/gocqhttp-docker:latest

@@ -18,7 +18,7 @@ services:
 
     gocq:
         container_name: gocq
-        image: gocqhttp:latest
+        image: xzsk2/gocqhttp-docker:latest
         restart: unless-stopped
         volumes:
             - ./gocq:/data

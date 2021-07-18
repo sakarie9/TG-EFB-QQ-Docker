@@ -2,6 +2,8 @@
 
 EFB和Mirai的Docker Compose部署方式
 
+>**请优先使用 [go-cqhttp](https://github.com/xzsk2/TG-EFB-QQ-Docker/tree/go-cqhttp) 分支，使用 [go-cqhttp](https://github.com/Mrs4s/go-cqhttp) 代替mirai，拥有更高的性能及更低的占用**
+
 使用项目
 
 - [TG-EFB-QQ-Docker](https://github.com/xzsk2/TG-EFB-QQ-Docker)

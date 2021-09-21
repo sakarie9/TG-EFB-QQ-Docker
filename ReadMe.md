@@ -29,7 +29,7 @@ EFB和Mirai的Docker Compose部署方式
 
 ```bash
 # 克隆
-git clone https://github.com/xzsk2/TG-EFB-QQ-Docker.git
+git clone -b mirai https://github.com/xzsk2/TG-EFB-QQ-Docker.git
 # 进入文件夹
 cd TG-EFB-QQ-Docker
 ```

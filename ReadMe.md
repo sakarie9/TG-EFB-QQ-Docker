@@ -61,3 +61,17 @@ docker-compose up -d
 ```bash
 docker-compose down
 ```
+
+### 自动更新
+
+```
+docker run -d \
+    --name watchtower \
+    --restart unless-stopped \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    containrrr/watchtower -c \
+    --interval 3600 \
+    efb gocq
+```
+
+若Docker镜像未及时跟进上游项目更新，欢迎提交Issue

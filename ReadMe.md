@@ -2,7 +2,13 @@
 
 EFB和Go-CQHTTP的Docker Compose部署方式
 
-使用项目
+## 这是什么
+
+使用 Bot 在 Telegram 及 QQ 间转发消息，基本可以做到去 QQ 化，仅在 Telegram 上与 QQ 好友/群组互动
+
+本项目使用 Docker Compose 简化了 [Telegram Bot](https://github.com/ehForwarderBot/ehForwarderBot) 和 [QQ Bot](https://github.com/Mrs4s/go-cqhttp) 的安装与配置，仅需要 Docker Compose 与流畅的国际互联网连接即可使用
+
+## 使用项目
 
 - [TG-EFB-QQ-Docker](https://github.com/xzsk2/TG-EFB-QQ-Docker)
 
@@ -30,7 +36,7 @@ cd TG-EFB-QQ-Docker
 
 ### 修改配置文件
 
-可参考 [Telegram收发QQ信息-EFB和Mirai的Docker部署教程](https://sakari.top/2021/05/05/tg-qq/) 或各项目的文档
+可参考 [Telegram收发QQ信息-EFB和Mirai的Docker部署教程](https://sakari.top/2021/11/15/tg-qq-gocq/) 及各项目的文档
 
 1. 修改 `blueset.telegram/config.yaml` 内的 `token` 及 `admins`，如不能访问Telegram则需要在此配置代理
 
@@ -74,4 +80,4 @@ docker run -d \
     efb gocq
 ```
 
-若Docker镜像未及时跟进上游项目更新，欢迎提交Issue
+若Docker镜像未及时跟进上游项目更新，欢迎提交 Issue

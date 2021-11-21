@@ -24,7 +24,7 @@ message:
   # 可选: string,array
   post-format: array
   # 是否忽略无效的CQ码, 如果为假将原样发送
-  ignore-invalid-cqcode: false
+  ignore-invalid-cqcode: true
   # 是否强制分片发送消息
   # 分片发送将会带来更快的速度
   # 但是兼容性会有些问题
@@ -36,13 +36,21 @@ message:
   # 是否上报自身消息
   report-self-message: false
   # 移除服务端的Reply附带的At
-  remove-reply-at: false
+  remove-reply-at: true
   # 为Reply附加更多信息
   extra-reply-data: true
+  # 跳过 Mime 扫描, 忽略错误数据
+  skip-mime-scan: false
 
 output:
   # 日志等级 trace,debug,info,warn,error
   log-level: warn
+  # 日志时效 单位天. 超过这个时间之前的日志将会被自动删除. 设置为 0 表示永久保留.
+  log-aging: 15
+  # 是否在每次启动时强制创建全新的文件储存日志. 为 false 的情况下将会在上次启动时创建的日志文件续写
+  log-force-new: true
+  # 是否启用日志颜色
+  log-colorful: true
   # 是否启用 DEBUG
   debug: false # 开启调试模式
 
@@ -69,6 +77,11 @@ database: # 数据库相关设置
     # 关闭将无法使用 撤回 回复 get_msg 等上下文相关功能
     enable: true
 
+  # 媒体文件缓存， 删除此项则使用缓存文件(旧版行为)
+  cache:
+    image: data/image.db
+    video: data/video.db
+
 # 连接服务列表
 servers:
   # 添加方式，同一连接方式可添加多个，具体配置说明请查看文档
@@ -84,12 +97,18 @@ servers:
       port: 5700
       # 反向HTTP超时时间, 单位秒
       # 最小值为5，小于5将会忽略本项设置
-      timeout: 5
+      timeout: 10
+      # 长轮询拓展
+      long-polling:
+        # 是否开启
+        enabled: false
+        # 消息队列大小，0 表示不限制队列大小，谨慎使用
+        max-queue-size: 2000
       middlewares:
         <<: *default # 引用默认中间件
       # 反向HTTP POST地址列表
       post:
       #- url: '' # 地址
       #  secret: ''           # 密钥
-      - url: 127.0.0.1:8000 # 地址
+      - url: http://127.0.0.1:8000/ # 地址
         secret: ''          # 密钥

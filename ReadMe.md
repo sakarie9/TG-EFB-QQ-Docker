@@ -8,6 +8,36 @@ EFB和Go-CQHTTP的Docker Compose部署方式
 
 本项目使用 Docker Compose 简化了 [Telegram Bot](https://github.com/ehForwarderBot/ehForwarderBot) 和 [QQ Bot](https://github.com/Mrs4s/go-cqhttp) 的安装与配置，仅需要 Docker Compose 与流畅的国际互联网连接即可使用
 
+
+## ⚠️配置文件更新警告⚠️
+
+>如果你正在使用本项目请往下看，这关系到你下次更新后是否能正常使用本项目
+>
+>如果你未使用或正准备本项目请略过本段，目前的仓库已经应用了新的配置文件，你可以直接使用本项目即可
+
+[go-cqhttp](https://github.com/Mrs4s/go-cqhttp) 从 [v1.0.0-beta8](https://github.com/Mrs4s/go-cqhttp/releases/tag/v1.0.0-beta8) 开始修改了部分配置文件，请检查你的 `gocq/config.yml` 文件的最后一段是否为
+
+```
+      post:
+      #- url: '' # 地址
+      #  secret: ''           # 密钥
+      - url: 127.0.0.1:8000 # 地址
+        secret: ''          # 密钥
+```
+
+修改第四行的url即可
+
+```
+      post:
+      #- url: '' # 地址
+      #  secret: ''           # 密钥
+      - url: http://127.0.0.1:8000/ # 地址
+        secret: ''          # 密钥
+```
+
+完整的配置文件参考 [config.yml](gocq/config.yml) 或 [9a84c3f](https://github.com/xzsk2/TG-EFB-QQ-Docker/commit/9a84c3f5850366c642cd3801e34068b182562b07)
+
+
 ## 使用项目
 
 - [TG-EFB-QQ-Docker](https://github.com/xzsk2/TG-EFB-QQ-Docker)

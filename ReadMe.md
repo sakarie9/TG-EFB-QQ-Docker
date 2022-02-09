@@ -36,7 +36,9 @@ cd TG-EFB-QQ-Docker
 
 ### 修改配置文件
 
-参考 [Telegram收发QQ信息-EFB和Mirai的Docker部署教程](https://sakari.top/2021/05/05/tg-qq/) 或各项目的文档
+参考 [Mirai 客户端配置教程](https://github.com/ehForwarderBot/efb-qq-slave/blob/master/doc/Mirai_zh-CN.rst)
+
+~~参考 [Telegram收发QQ信息-EFB和Mirai的Docker部署教程](https://sakari.top/2021/05/05/tg-qq/) 或各项目的文档~~ （旧版本，但仍可参考）
 
 ### 运行
 

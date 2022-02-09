@@ -7,10 +7,7 @@ services:
         restart: unless-stopped
         volumes:
             - ./efb:/app/config
-        networks:
-            efbm:
-                aliases:
-                    - efb
+        network_mode: "host"
         depends_on:
             - mirai
     
@@ -21,10 +18,4 @@ services:
         volumes:
             - ./mirai/config:/app/config
             - ./mirai/bots:/app/bots
-        networks:
-            efbm:
-                aliases:
-                    - mirai
-
-networks:
-    efbm: 
+        network_mode: "host"

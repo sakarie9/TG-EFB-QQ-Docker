@@ -84,8 +84,17 @@ docker run -d \
 
 ## 其他问题
 
-### ⚠️配置文件更新警告⚠️
+### ⚠️配置文件更新相关⚠️
 
+[go-cqhttp](https://github.com/Mrs4s/go-cqhttp) 在 [v1.0.0-rc2 ](https://github.com/Mrs4s/go-cqhttp/releases/tag/v1.0.0-rc2) 修改了部分配置
+
+- [f63c59f](https://github.com/Mrs4s/go-cqhttp/commit/f63c59f1a40a4210bea6a59b10a658257722a2e0) `HTTP和正向WS使用了新配置文件格式(保留了对老版本的兼容)`
+
+新版配置文件兼容旧版，但为了避免旧配置文件兼容的废弃，可以参考 [95f3890](https://github.com/xzsk2/TG-EFB-QQ-Docker/commit/95f3890f8a23f65365a089d7425dca4e3a5ca8aa) 更新配置文件
+
+<details>
+  <summary>2021/11/21</summary>
+  
 >如果你在 2021/11/21 前即 [9a84c3f](https://github.com/xzsk2/TG-EFB-QQ-Docker/commit/9a84c3f5850366c642cd3801e34068b182562b07) 前拉取过本项目且正在使用，请进行如下配置文件的修改，否则 go-cqhttp 更新后将无法正常使用
 >
 >如果你未使用或正准备本项目请略过本段，目前的仓库已经应用了新的配置文件，你可以直接使用本项目即可
@@ -111,3 +120,8 @@ docker run -d \
 ```
 
 完整的配置文件参考 [config.yml](gocq/config.yml) 或 [9a84c3f](https://github.com/xzsk2/TG-EFB-QQ-Docker/commit/9a84c3f5850366c642cd3801e34068b182562b07)
+</details>
+
+
+
+

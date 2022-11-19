@@ -1,6 +1,6 @@
 # TG-EFB-QQ-Docker
 
-EFB和Go-CQHTTP的Docker Compose部署方式
+EFB 和 Go-CQHTTP 的 Docker Compose 部署方式
 
 ## 这是什么
 
@@ -84,6 +84,16 @@ docker run -d \
 
 ## 其他问题
 
+### 所有消息挤在一个对话如何分开
+
+参考 [绑定会话](https://github.com/ehForwarderBot/efb-telegram-master/blob/master/readme_translations/zh_CN.rst#link%E7%BB%91%E5%AE%9A%E4%BC%9A%E8%AF%9D)
+
+### VPS上登陆异常
+
+`当前设备网络不稳定或处于复杂网络环境,为了你的帐号安全,建议将两个设备连接同一网络或将被扫描设备连接你的手机热点后,重新扫码登录。`
+
+在本地直接下载使用 [go-cqhttp](https://github.com/Mrs4s/go-cqhttp/releases/tag/v1.0.0-rc3) 配置运行，登陆成功后将生成的 `device.json` 上传到远程服务器对应位置重新登陆
+
 ### ⚠️配置文件更新相关⚠️
 
 [go-cqhttp](https://github.com/Mrs4s/go-cqhttp) 在 [v1.0.0-rc2 ](https://github.com/Mrs4s/go-cqhttp/releases/tag/v1.0.0-rc2) 修改了部分配置
@@ -121,7 +131,3 @@ docker run -d \
 
 完整的配置文件参考 [config.yml](gocq/config.yml) 或 [9a84c3f](https://github.com/xzsk2/TG-EFB-QQ-Docker/commit/9a84c3f5850366c642cd3801e34068b182562b07)
 </details>
-
-
-
-

@@ -36,7 +36,7 @@ cd TG-EFB-QQ-Docker
 
 ### 修改配置文件
 
-可参考 [Telegram收发QQ信息-EFB和GO-CQHTTP的Docker部署教程](https://sakari.top/2021/11/15/tg-qq-gocq/) 及各项目的文档
+可参考 [Telegram收发QQ信息-EFB和GO-CQHTTP的Docker部署教程](https://sakari.top/2021/tg-qq-gocq/) 及各项目的文档
 
 1. 修改 `blueset.telegram/config.yaml` 内的 `token` 及 `admins`，如不能访问Telegram则需要在此配置代理
 
